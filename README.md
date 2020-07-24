@@ -1,6 +1,14 @@
 # Itaewon
 
-My personal python library to speed-up my workflow. Sample usage is shown below.
+My personal python library to speed-up my workflow. 
+
+Also, i found myself switching to R and Python quite frequently. This is my attempt to minimize that.
+
+The implementation is quite simple, since i'm simply running `R` scripts in the background.
+
+Sample usage is shown below. 
+
+
 
 # Installation
 
@@ -26,108 +34,6 @@ data['X'] = np.random.normal(5,2.6,300)
 data['Z'] = np.random.binomial(1,0.3,300)
 data['Y'] = 10*data['X'] + 2*data['Z'] + error
 ```
-
-# Testing the model module
-
-
-```python
-from itaewon.model import Model
-```
-
-
-```python
-# Regression Test
-model = Model(data[['X','Z']],data['Y'],True)
-model.model()
-```
-
-    Linear Regression RMSE 4.752017508515921
-    XGBOOST RMSE 5.92911918067769
-    Linear Regression Performed Better with 1.1771016721617684 difference
-
-
-
-```python
-# Classification Test
-model = Model(data[['X','Y']],data['Z'],False)
-model.model()
-```
-
-    Logistic Regression Result
-    [[70  0]
-     [29  0]]
-                  precision    recall  f1-score   support
-
-               0       0.71      1.00      0.83        70
-               1       0.00      0.00      0.00        29
-
-        accuracy                           0.71        99
-       macro avg       0.35      0.50      0.41        99
-    weighted avg       0.50      0.71      0.59        99
-
-    XGBOOST Result
-    [[58 12]
-     [24  5]]
-                  precision    recall  f1-score   support
-
-               0       0.71      0.83      0.76        70
-               1       0.29      0.17      0.22        29
-
-        accuracy                           0.64        99
-       macro avg       0.50      0.50      0.49        99
-    weighted avg       0.59      0.64      0.60        99
-
-
-
-# Testing the custom module
-
-
-```python
-from itaewon.custom import Custom
-```
-
-
-```python
-from sklearn.linear_model import LinearRegression, LogisticRegression
-```
-
-
-```python
-lr = LinearRegression()
-```
-
-
-```python
-custom = Custom(data[['X','Z']],data['Y'],True,lr)
-custom.custom()
-```
-
-    RMSE for LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False) : 4.752017508515921
-
-
-
-```python
-lr = LogisticRegression()
-```
-
-
-```python
-custom = Custom(data[['X','Y']],data['Z'],False,lr)
-print(custom.custom()[0])
-print(custom.custom()[1])
-```
-
-    [[70  0]
-     [29  0]]
-                  precision    recall  f1-score   support
-
-               0       0.71      1.00      0.83        70
-               1       0.00      0.00      0.00        29
-
-        accuracy                           0.71        99
-       macro avg       0.35      0.50      0.41        99
-    weighted avg       0.50      0.71      0.59        99
-
 
 
 # Testing RModels
@@ -357,3 +263,110 @@ rmodel.predict(model,new_data)
   </tbody>
 </table>
 </div>
+
+
+
+
+
+# Testing the model module
+
+
+```python
+from itaewon.model import Model
+```
+
+
+```python
+# Regression Test
+model = Model(data[['X','Z']],data['Y'],True)
+model.model()
+```
+
+    Linear Regression RMSE 4.752017508515921
+    XGBOOST RMSE 5.92911918067769
+    Linear Regression Performed Better with 1.1771016721617684 difference
+
+
+
+```python
+# Classification Test
+model = Model(data[['X','Y']],data['Z'],False)
+model.model()
+```
+
+    Logistic Regression Result
+    [[70  0]
+     [29  0]]
+                  precision    recall  f1-score   support
+
+               0       0.71      1.00      0.83        70
+               1       0.00      0.00      0.00        29
+
+        accuracy                           0.71        99
+       macro avg       0.35      0.50      0.41        99
+    weighted avg       0.50      0.71      0.59        99
+
+    XGBOOST Result
+    [[58 12]
+     [24  5]]
+                  precision    recall  f1-score   support
+
+               0       0.71      0.83      0.76        70
+               1       0.29      0.17      0.22        29
+
+        accuracy                           0.64        99
+       macro avg       0.50      0.50      0.49        99
+    weighted avg       0.59      0.64      0.60        99
+
+
+
+# Testing the custom module
+
+
+```python
+from itaewon.custom import Custom
+```
+
+
+```python
+from sklearn.linear_model import LinearRegression, LogisticRegression
+```
+
+
+```python
+lr = LinearRegression()
+```
+
+
+```python
+custom = Custom(data[['X','Z']],data['Y'],True,lr)
+custom.custom()
+```
+
+    RMSE for LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False) : 4.752017508515921
+
+
+
+```python
+lr = LogisticRegression()
+```
+
+
+```python
+custom = Custom(data[['X','Y']],data['Z'],False,lr)
+print(custom.custom()[0])
+print(custom.custom()[1])
+```
+
+    [[70  0]
+     [29  0]]
+                  precision    recall  f1-score   support
+
+               0       0.71      1.00      0.83        70
+               1       0.00      0.00      0.00        29
+
+        accuracy                           0.71        99
+       macro avg       0.35      0.50      0.41        99
+    weighted avg       0.50      0.71      0.59        99
+
+
