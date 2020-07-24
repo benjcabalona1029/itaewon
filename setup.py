@@ -7,7 +7,7 @@ VERSION = '0.1.0'
 PACKAGE_NAME = 'itaewon'
 AUTHOR = 'Benjamin Cabalona Jr'
 AUTHOR_EMAIL = 'benjcabalonajr@gmail.com'
-URL = 'https://github.com/you/your_package'
+URL = 'https://github.com/benjcabalona1029/itaewon'
 
 LICENSE = 'MIT License'
 DESCRIPTION = 'A personal python library to speed up my workflow'
