@@ -18,7 +18,8 @@ INSTALL_REQUIRES = [
       'numpy',
       'pandas',
       'sklearn',
-      'xgboost'
+      'xgboost',
+      'rpy2'
 ]
 
 setup(name=PACKAGE_NAME,
