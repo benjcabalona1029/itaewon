@@ -229,63 +229,6 @@ rmodel.predict(model,new_data)
   </tbody>
 </table>
 </div>
-
-
-
-
-
-# Testing the model module
-
-
-```python
-from itaewon.model import Model
-```
-
-
-```python
-# Regression Test
-model = Model(data[['X','Z']],data['Y'],True)
-model.model()
-```
-
-    Linear Regression RMSE 4.752017508515921
-    XGBOOST RMSE 5.92911918067769
-    Linear Regression Performed Better with 1.1771016721617684 difference
-
-
-
-```python
-# Classification Test
-model = Model(data[['X','Y']],data['Z'],False)
-model.model()
-```
-
-    Logistic Regression Result
-    [[70  0]
-     [29  0]]
-                  precision    recall  f1-score   support
-
-               0       0.71      1.00      0.83        70
-               1       0.00      0.00      0.00        29
-
-        accuracy                           0.71        99
-       macro avg       0.35      0.50      0.41        99
-    weighted avg       0.50      0.71      0.59        99
-
-    XGBOOST Result
-    [[58 12]
-     [24  5]]
-                  precision    recall  f1-score   support
-
-               0       0.71      0.83      0.76        70
-               1       0.29      0.17      0.22        29
-
-        accuracy                           0.64        99
-       macro avg       0.50      0.50      0.49        99
-    weighted avg       0.59      0.64      0.60        99
-
-
-
 # Testing the custom module
 
 
