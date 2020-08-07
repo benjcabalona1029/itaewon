@@ -1,6 +1,7 @@
 # Itaewon
 
 [![Downloads](https://pepy.tech/badge/itaewon)](https://pepy.tech/project/itaewon)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/benjcabalona1029/itaewon/blob/master/LICENSE)
 
 My personal python library to speed-up my workflow.
 
