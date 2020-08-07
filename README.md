@@ -17,7 +17,7 @@ Sample usage is shown below.
 
 
 ```python
-# !pip install itaewon==0.1.1
+# !pip install itaewon==0.1.4
 ```
 
 
@@ -229,6 +229,7 @@ rmodel.predict(model,new_data)
   </tbody>
 </table>
 </div>
+
 # Testing the custom module
 
 
