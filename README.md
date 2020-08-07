@@ -1,12 +1,14 @@
 # Itaewon
 
-My personal python library to speed-up my workflow. 
+[![Downloads](https://pepy.tech/badge/itaewon)](https://pepy.tech/project/itaewon)
+
+My personal python library to speed-up my workflow.
 
 Also, i found myself switching to R and Python quite frequently. This is my attempt to minimize that.
 
 The implementation is quite simple, since i'm simply running `R` scripts in the background.
 
-Sample usage is shown below. 
+Sample usage is shown below.
 
 
 
@@ -331,5 +333,3 @@ print(custom.custom()[1])
         accuracy                           0.71        99
        macro avg       0.35      0.50      0.41        99
     weighted avg       0.50      0.71      0.59        99
-
-
